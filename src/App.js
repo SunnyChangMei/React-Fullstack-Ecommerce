@@ -5,14 +5,16 @@ import ShopPage from './pages/shop/Shop';
 import Header from './components/header/Header';
 
 import './App.css'
+import SignInAndSignUP from './pages/sign-in-and-sign-up/SignIn-SignOut';
 
 function App() {
   return (
     <div>
-      <Header/>
+      <Header />
       <Switch>
         <Route exact path={'/'} component={HomePage} />
         <Route path={'/shop'} component={ShopPage} />
+        <Route path={'/signin'} component={SignInAndSignUP} />
       </Switch>
     </div>
   );
