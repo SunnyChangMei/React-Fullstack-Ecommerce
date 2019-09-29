@@ -2,8 +2,8 @@
 
 ## Tech Stack
 
-Frontend | Server | Backend | Others |
----------|----------|--------- | ---- |
- JavaScript | Apollo | Firebase | Stripe Payment
- React w/ Hooks | GraphQL | Google Auth | Webpack |
+Frontend | Server | Backend | Features | Test
+---------|----------|--------- | ---- | ----|
+ JavaScript | Apollo | Firebase | Stripe Payment | Jest
+ React w/ Hooks | GraphQL | Google Auth | Webpack | Enzyme
  Redux | | | Babel
