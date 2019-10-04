@@ -3,7 +3,7 @@ import HomePage from './pages/homepage/HomePage';
 import { Route, Switch } from 'react-router-dom';
 import ShopPage from './pages/shop/Shop';
 import Header from './components/header/Header';
-import { auth } from './firebase/firebase.utils'; 
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import './App.css';
 import SignInAndSignUP from './pages/sign-in-and-sign-up/SignIn-SignOut';
@@ -18,10 +18,23 @@ class App extends React.Component {
 
   unsubscribeFromAuth = null;
 
+  // pass in createUserProfileDocument to use setState create new user in database
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user });
-      console.log(user);
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+
+        userRef.onSnapShot(snapShot => {
+          this.setState({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data()
+            }
+          });
+        });
+      } else {
+        this.setState({ currentUser: userAuth });
+      }
     });
   }
 
@@ -29,7 +42,6 @@ class App extends React.Component {
     //close the auth subscribe
     this.unsubscribeFromAuth();
   }
-
 
   render() {
     return (
