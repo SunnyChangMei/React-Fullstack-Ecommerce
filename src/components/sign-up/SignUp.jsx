@@ -90,9 +90,8 @@ class SignUp extends React.Component {
             onChange={this.handleChange}
             required
           />
+          <CustomButton type="submit">SIGN UP</CustomButton>
         </form>
-
-        <CustomButton type="submit">Sign Up</CustomButton>
       </div>
     );
   }
