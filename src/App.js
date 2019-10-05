@@ -4,9 +4,9 @@ import { Route, Switch } from 'react-router-dom';
 import ShopPage from './pages/shop/Shop';
 import Header from './components/header/Header';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import SignInAndSignUP from './pages/sign-in-and-sign-up/SignIn-SignOut';
 
 import './App.css';
-import SignInAndSignUP from './pages/sign-in-and-sign-up/SignIn-SignOut';
 
 class App extends React.Component {
   constructor(props) {
@@ -51,7 +51,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path={'/'} component={HomePage} />
           <Route path={'/shop'} component={ShopPage} />
-          <Route path={'/signin'} component={SignInAndSignUP} />
+          <Route path={'/login'} component={SignInAndSignUP} />
         </Switch>
       </div>
     );
