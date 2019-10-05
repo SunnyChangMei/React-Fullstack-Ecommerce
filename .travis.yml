@@ -5,9 +5,3 @@ language: node_js
 node_js:
   - node
 
-install:
-  - npm ci
-
-notification:
-  email: false
-
