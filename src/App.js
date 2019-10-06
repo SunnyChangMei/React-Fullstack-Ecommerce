@@ -1,6 +1,6 @@
 import React from 'react';
 import HomePage from './pages/homepage/HomePage';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import ShopPage from './pages/shop/Shop';
 import Header from './components/header/Header';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
@@ -53,18 +53,28 @@ class App extends React.Component {
         <Switch>
           <Route exact path={'/'} component={HomePage} />
           <Route path={'/shop'} component={ShopPage} />
-          <Route path={'/login'} component={SignInAndSignUP} />
+          <Route
+            exact
+            path={'/login'}
+            render={() =>
+              this.props.currentUser ? <Redirect to="/" /> : <SignInAndSignUP />
+            }
+          />
         </Switch>
       </div>
     );
   }
 }
 
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser
+});
+
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(App);
