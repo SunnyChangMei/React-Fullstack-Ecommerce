@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import './header.styles.scss';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import CartIcon from '../cart-icon/CartIcon';
+import CartDropdown from '../cart-dropdown/CartDropdown';
 
 const Header = ({ currentUser }) => (
   <div className="header">
@@ -31,6 +32,7 @@ const Header = ({ currentUser }) => (
       )}
       <CartIcon/>
     </div>
+      <CartDropdown/>
   </div>
 );
 
