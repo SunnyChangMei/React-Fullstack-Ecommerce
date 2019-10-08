@@ -11,6 +11,7 @@ import { selectCurrentUser } from './redux/user/user.selectors';
 import { createStructuredSelector } from 'reselect';
 
 import './App.css';
+import Checkout from './pages/checkout/Checkout';
 
 class App extends React.Component {
   // remove state after setup setCurrentUser reducer
@@ -55,6 +56,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path={'/'} component={HomePage} />
           <Route path={'/shop'} component={ShopPage} />
+          <Route exact path={'/checkout'} component={Checkout} />
           <Route
             exact
             path={'/login'}
