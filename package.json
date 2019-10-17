@@ -14,7 +14,8 @@
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "styled-components": "^4.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -36,5 +37,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "babel-plugin-styled-components": "^1.10.6"
   }
 }
