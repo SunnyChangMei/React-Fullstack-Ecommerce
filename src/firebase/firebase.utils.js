@@ -15,7 +15,6 @@ const config = {
 
 firebase.initializeApp(config);
 
-
 //create snapShot for new user to firestore database
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
@@ -25,7 +24,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   // get userRef for firestore userAuth
   const snapShot = await userRef.get();
 
-// check if there is any user data exists, if not, use set.() to create new user with new Date()
+  // check if there is any user data exists, if not, use set.() to create new user with new Date()
   if (snapShot.exists === false) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
@@ -44,6 +43,17 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
+export const addCollectionAndDocuments = async (collectionKey, objectToAdd) => {
+  const collectionRef = firestore.collection(collectionKey);
+
+  const batch = firestore.batch();
+
+  objectToAdd.forEach(obj => {
+    const newDocRef = collectionRef.doc();
+    batch.set(newDocRef, obj);
+  });
+  return await batch.commit();
+};
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
