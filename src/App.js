@@ -14,14 +14,6 @@ import './App.css';
 import Checkout from './pages/checkout/Checkout';
 
 class App extends React.Component {
-  // remove state after setup setCurrentUser reducer
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     currentUser: null
-  //   };
-  // }
-
   unsubscribeFromAuth = null;
 
   // pass in createUserProfileDocument to use setState create new user in database
@@ -40,6 +32,7 @@ class App extends React.Component {
         });
       }
       // no need to pass in object, just need to object to update with.
+      // collectionsArray save title and items to firebase database
       setCurrentUser(userAuth);
     });
   }
