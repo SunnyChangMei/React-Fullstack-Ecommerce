@@ -1,20 +1,18 @@
 /* eslint-disable no-console */
-const dotenv = require('dotenv');
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 const path = require('path');
 
-// import * as dotenv from 'dotenv';
-
-if (process.env.NODE_ENV !== 'production') dotenv.config();
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 
@@ -28,10 +26,9 @@ if (process.env.NODE_ENV === 'production') {
 
 app.listen(port, (error) => {
   if (error) throw error;
-  console.log(`server running on port: ${port}`);
+  console.log(`Server running on port ${port}`);
 });
 
-// make post req to stripe server
 app.post('/payment', (req, res) => {
   const body = {
     source: req.body.token.id,
