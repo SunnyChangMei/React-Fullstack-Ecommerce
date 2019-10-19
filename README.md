@@ -4,8 +4,8 @@
 
 ## Tech Stack
 
-| Frontend       | Server  | Backend     | Features       | Test      |
-| -------------- | ------- | ----------- | -------------- | --------- |
-| JavaScript     | Apollo  | Firebase    | Stripe Payment | Jest      |
-| React w/ Hooks | GraphQL | Google Auth | Webpack        | Enzyme    |
-| Redux          |         |             | Babel          | Travis-ci |
+| Frontend       | Server  | Backend     | Features       | Test      | Tools   |
+| -------------- | ------- | ----------- | -------------- | --------- | ------- |
+| JavaScript     | Apollo  | Firebase    | Stripe Payment | Jest      | Webpack |
+| React w/ Hooks | GraphQL | Google Auth | Material UI    | Enzyme    | Babel   |
+| Redux w/ Saga  |         |             |                | Travis-ci | Heroku  |
