@@ -1,0 +1,24 @@
+language: node_js
+
+node_js:
+  - node
+
+sudo: false
+
+cache: npm
+
+install:
+  - npm ci
+
+script:
+  - npm run build
+
+  before_deploy:
+  - rm -rf node_modules # omit from the tarball, since we skip cleanup
+
+  deploy:
+  skip_cleanup: true # prevents travis from deleting the build
+  provider: heroku
+  app: react-ec-shop
+  api_key:
+    secure: ""
