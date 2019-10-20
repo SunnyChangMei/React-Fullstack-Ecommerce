@@ -1,24 +1,17 @@
 language: node_js
-
 node_js:
-  - node
-
+- node
 sudo: false
-
 cache: npm
-
 install:
-  - npm ci
-
+- npm ci
 script:
-  - npm run heroku-postbuild
-
+- npm run heroku-postbuild
 before_deploy:
-  - rm -rf node_modules
-
+- rm -rf node_modules
 deploy:
   skip_cleanup: true
   provider: heroku
   app: react-ec-shop
   api_key:
-    secure: sWNEBy4GbUvXRCLzSeaP0PCSwgx20CWjfToqwfVaPKysKUiI0z4wK9/ZvIxj1sO0OBn4/tsg8ZCKDYKROY4U/Qxjllw84QMop9heg9hOCsND/haAldHB56MeM+oCrHo5ORsp0rMvhg5fQOGrXIHNJT9FZxhvCHdYj+3MsVZ3Kh5/l+h0LZU+bPWbAY/CS0mwf5wdkgZfRRhUADwxHKRjZC4v+y/vYlB744eRooD4hGmQJmccFsDdtn5K021ZmKCOgS3/XfcB8xztzNwDsIjkBlGVKtbh7EP745fuv0hOno8ww9n/XRYFYSWVW5TV3CGGbi4EEKiw18AABrW8ghGN3Q5rRIC/gyRA6A4cyaUQ1z0C2XgePdG7cxk993B/Swtzeo4FMfX0VpIqNgnHa6h5WCaiJoScGUk6IZtBR37bvnlfYlbYCuac7egN3n0rjrf1yfbgSkzSGqUzuKoKbxULO+mv4T2DCm6K/F8tavw42t2D/GyQgURwyQ8OETr3ecxl1BSLV4fDvtdMWaY3kXy2wpQq/13h/x9nEhIIrwXJLr+SCZ3/sFQO984f9MF5qnDj1kGD/fzRJXu5eMIMysdcUjluzoTy8BbzJuMAkhPJCbWuCmOJi3ZBmupHe9/1o2thGicWrkDdNVaxjaTNs1uUNo28qk1S7XJTYvphTCgv27w=
+    secure: BVHHcZLB12NfAD62CXh5gYp9nN31CB4ETZCbOCkqDo/GFTa5SACfIOk70b0Ys/7UJ4ZGEifJxpL2Ba6rpeeoDdKSwPjc/0VLpQ5jrdiEJbRAQBADTXt6KBwzRIiWVAp6QbuK2l2JrVYyhvnmEVwbcqbr817zSJcfd7efYAEccU4nFR8y35EvhdWvQGxmf0SbUj5Ccy9i5SVkmmwbbjS7Ftj3WUcu6tBnKz/hbBVt0pNY+h+cetfB7SjZqlGcRuv/KTPOKcUx/XSKQntJO5F1MmsbLi9/grxJp+SWT1FuUVGpkBsHqQDpfoLa/6/67/5kKqI+oR6g0RAsq9dmCRbIhOWPs1FhJohpMU9nEAZXTxy9+Q3dqPEePj1MYk/gKWdUc3dFsxQn6beaUHhpsO90QFbJT8TrGk8qhgBZZi8tHHUypUXP0UZKdZRYou+ylJH6YzQ+2UreD7t+UTA0hhz+Q80vPv49NkBL0yCaTz0o4CrtdXzMWEFjHbclAdLcaxbIPuWeRYyS64YaNICX807ZJLNL5rpHmZmWx9WgMifm/xVDW+i4PGZnp25OEnGQmYIojMzBrda9WimfCMYQ7ACfj32rHDNw8O1pUreNoEalq0HhxrvBSX2uBmuI+PnU6Du4zE6c1irOPV/58/MBcxP0+s3vqsKFD3Od/03FOi1tDJU=
