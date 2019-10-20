@@ -1,14 +1,21 @@
 language: node_js
+
 node_js:
-- node
+  - node
+
 sudo: false
+
 cache: npm
+
 install:
-- npm ci
+  - npm ci
+
 script:
-- npm run heroku-postbuild
+  - npm run heroku-postbuild
+
 before_deploy:
-- rm -rf node_modules
+  - rm -rf node_modules
+
 deploy:
   skip_cleanup: true
   provider: heroku
