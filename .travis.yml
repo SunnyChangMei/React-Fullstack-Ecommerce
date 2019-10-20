@@ -21,4 +21,4 @@ deploy:
   provider: heroku
   app: react-ec-shop
   api_key:
-    secure: 'b1577ac7-25f9-40b8-b245-fe5f55967f82'
+    secure: ''
