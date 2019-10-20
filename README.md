@@ -7,5 +7,5 @@
 | Frontend       | Server  | Backend     | Features       | Test      | Tools   |
 | -------------- | ------- | ----------- | -------------- | --------- | ------- |
 | JavaScript     | Apollo  | Firebase    | Stripe Payment | Jest      | Webpack |
-| React w/ Hooks | GraphQL | Google Auth | Material UI    | Enzyme    | Babel   |
+| React w/ Hooks | GraphQL | Google Auth | Material UI    | Enzyme    |         |
 | Redux w/ Saga  |         |             |                | Travis-ci | Heroku  |
