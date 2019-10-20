@@ -15,10 +15,9 @@ script:
 
 before_deploy:
   - rm -rf node_modules
-
-deploy:
-  skip_cleanup: true
-  provider: heroku
-  app: react-ec-shop
-  api_key:
-    secure: ''
+# deploy:
+#   skip_cleanup: true
+#   provider: heroku
+#   app: react-ec-shop
+#   api_key:
+#     secure: ''
