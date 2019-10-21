@@ -6,9 +6,6 @@ node_js:
 sudo: false
 
 cache: npm
-  directories:
-  - node_modules
-  - client/node_modules
 
 install:
   - npm ci
@@ -18,7 +15,6 @@ script:
 
 before_deploy:
   - rm -rf node_modules
-  - rm -rf client/node_modules
 
 deploy:
   skip_cleanup: true
