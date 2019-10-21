@@ -7,7 +7,6 @@ import {
   selectCartTotal
 } from '../../redux/cart/cart.selectors';
 
-import CheckoutItem from '../../components/checkout-item/CheckoutItem';
 import StripeCheckoutButton from '../../components/stripe-button/StripeButton';
 
 import {
@@ -17,6 +16,8 @@ import {
   TotalContainer,
   WarningContainer
 } from './checkout.styles';
+
+import CheckoutItem from '../../components/checkout-item/CheckoutItem';
 
 const Checkout = ({ cartItems, total }) => (
   <CheckoutPageContainer>
