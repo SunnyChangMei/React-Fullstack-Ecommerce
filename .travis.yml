@@ -6,9 +6,6 @@ node_js:
 sudo: false
 
 cache: npm
-  directories:
-  - node_modules
-  - client/node_modules
 
 install:
   - npm ci
